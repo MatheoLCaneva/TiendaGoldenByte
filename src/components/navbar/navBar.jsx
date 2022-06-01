@@ -11,10 +11,9 @@ const NavBar = () => {
                     <CartIcon className="cart-widget__icon" />
                     <Navbar.Brand href="#home">Golden Byte</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-
+                        <Nav.Link href="#home">Inicio</Nav.Link>
+                        <Nav.Link href="#features">Ofertas</Nav.Link>
+                        <Nav.Link href="#pricing">Proximamente</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

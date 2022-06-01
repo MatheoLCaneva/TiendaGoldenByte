@@ -1,16 +1,18 @@
 import { Card } from "react-bootstrap"
+import Contador from "../contador/Contador"
+import "./Item.css"
 
 
 const Item = ({ nombre, precio, img }) => {
     return (
-        <Card style={{ width: '18rem'}}>
-            <Card.Img variant="top" src={url} alt={nombre} />
+        <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={img} alt={nombre} />
             <Card.Body>
                 <Card.Title>{nombre}</Card.Title>
                 <Card.Text>
-                    Precio: {precio}
+                    Precio: ${precio}
                 </Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
+                <Contador inicio={0}></Contador>
             </Card.Body>
         </Card>
     )

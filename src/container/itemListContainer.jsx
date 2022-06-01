@@ -1,9 +1,9 @@
 import './itemListContainer.css'
 import { useEffect, useState } from 'react'
 import { getProducto } from '../bd'
-import ItemList from '../components/itemList/itemList'
+import ItemList from '../components/itemList/ItemList'
 
-const ItemListContainer = ({ mensaje }) => {
+const ItemListContainer = ({mensaje}) => {
 
     const [productos, setProductos] = useState([])
 

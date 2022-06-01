@@ -1,5 +1,5 @@
-import NavBar from './components/navbar/navBar';
-import ItemListContainer from './container/itemListContainer';
+import NavBar from './components/navbar/NavBar';
+import ItemListContainer from './container/ItemListContainer';
 import './App.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
     <>
       <NavBar/>
-      <ItemListContainer mensaje = "¡Acá va a ir mi catalogo proximamente!"/>
+      <ItemListContainer mensaje = "Catálogo de Productos"/>
     </>
     
   );
