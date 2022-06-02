@@ -1,4 +1,5 @@
 import './itemListContainer.css'
+import React from 'react'
 import { useEffect, useState } from 'react'
 import { getProducto } from '../bd'
 import ItemList from '../components/itemList/ItemList'
