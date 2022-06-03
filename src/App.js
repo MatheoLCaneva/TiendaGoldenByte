@@ -1,20 +1,19 @@
 import React from 'react';
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import NavBar from './components/navbar/NavBar';
 import ItemListContainer from './container/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import './App.css';
 
 function App() {
   return (
     <Router>
       <NavBar />
-      <Switch>
-        <Route path="/producto/" >
-        </Route>
-        <Route path='/' >
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path='/productos/:id' element={<ItemDetailContainer />} />
+        <Route path='/Ecommerce' element={<h1 style={{ textAlign: "center" }}> Este seria el inicio </h1>} />
+        <Route path='/productos' element={<ItemListContainer mensaje={"Catalogo de Productos"} />} />
+      </Routes>
     </Router>
 
   );

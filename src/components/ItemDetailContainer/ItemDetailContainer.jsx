@@ -6,15 +6,16 @@ import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState([])
+    const [producto, setProducto] = useState()
 
     useEffect(() => {
         getProducto().then(response => {
-            setProductos(response)
-        })
-    }, [])
+            setProducto(response)
+            for (let i of response){
+                console.log(i)
+            }
+        })}, [])
 
-    console.log(useParams)
 
     return (
         <section>
