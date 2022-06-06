@@ -7,19 +7,19 @@ import { useParams } from 'react-router-dom'
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState()
+    const {id} = useParams()
 
     useEffect(() => {
         getProducto().then(response => {
-            setProducto(response)
-            for (let i of response){
-                console.log(i)
-            }
-        })}, [])
-
+            setProducto(response.find(res => res.id = id))
+            
+        }
+        )
+    }, [])
 
     return (
         <section>
-            <h1>Hola</h1>
+            <ItemDetail producto={producto} />
         </section>
     )
 }

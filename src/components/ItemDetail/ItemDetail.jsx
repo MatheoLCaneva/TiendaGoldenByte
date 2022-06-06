@@ -1,12 +1,13 @@
 import "./ItemDetail.css"
 
-const ItemDetail = ({ nombre, precio, img }) => {
+const ItemDetail = ({producto}) => {
+
+
+    console.log(producto)
     return (
         <div>
-            <h1>{nombre}</h1>
-            <h1>{precio}</h1>
-            <h1>{img}</h1>
-        </div>
+            <h1></h1>
+        </div>  
     )
 }
 
