@@ -5,6 +5,6 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export default function CartIcon() {
     return <>
-        <Icon className='pe-4' icon={faShoppingCart}/>
+        <Icon style={{cursor: "pointer"}} className='pe-4' icon={faShoppingCart}/>
     </>
 }

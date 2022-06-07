@@ -11,7 +11,7 @@ const NavBar = () => {
             <Navbar bg="light" variant="light">
                 <Container>
                     <CartIcon className="cart-widget__icon" />
-                    <Navbar.Brand href="#home">Golden Byte</Navbar.Brand>
+                    <Link style={{textDecoration: "none"}} to={"/"}><Navbar.Brand>Golden Byte</Navbar.Brand></Link>
                     <Nav className="me-auto">
                         <Link className='nav-link' to="/">Inicio</Link>    
                         <Link className='nav-link' to="/productos">Productos</Link>   
