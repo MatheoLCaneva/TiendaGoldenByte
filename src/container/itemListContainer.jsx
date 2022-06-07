@@ -9,7 +9,7 @@ const ItemListContainer = ({mensaje}) => {
     const [productos, setProductos] = useState([])
 
     useEffect(() => {
-        getProducto().then(response => {
+        getProducto(2000).then(response => {
             setProductos(response)
         })
     }, [])

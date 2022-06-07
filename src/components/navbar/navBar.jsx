@@ -13,7 +13,7 @@ const NavBar = () => {
                     <CartIcon className="cart-widget__icon" />
                     <Navbar.Brand href="#home">Golden Byte</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Link className='nav-link' to="/Ecommerce">Inicio</Link>    
+                        <Link className='nav-link' to="/">Inicio</Link>    
                         <Link className='nav-link' to="/productos">Productos</Link>   
                         <Nav.Link href="#pricing">Proximamente</Nav.Link>
                     </Nav>

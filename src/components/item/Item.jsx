@@ -5,18 +5,18 @@ import Contador from "../contador/Contador"
 import "./Item.css"
 
 
-const Item = ({ nombre, precio, img, id }) => {
+const Item = ({ nombre, precio, img, id, stock }) => {
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem', padding: "8px"}}>
             <Card.Img variant="top" src={img} alt={nombre} />
             <Card.Body>
-                <Link to={`/productos/${id}`}>
+                <Link style={{textDecoration: "none", color: "black"}} to={`/productos/${id}/${nombre}`}>
                     <Card.Title>{nombre}</Card.Title>
                     <Card.Text>
                         Precio: ${precio}
                     </Card.Text>
                 </Link>
-                <Contador inicio={0}></Contador>
+                <Contador inicio={0} stock={stock} tipoFlex="space-around"></Contador>
             </Card.Body>
         </Card>
     )
