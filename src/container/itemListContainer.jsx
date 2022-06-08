@@ -4,21 +4,32 @@ import { useEffect, useState } from 'react'
 import { getProducto } from '../bd'
 import ItemList from '../components/itemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { Spinner } from 'react-bootstrap'
 
 const ItemListContainer = ({ mensaje }) => {
-
     const { idCategoria } = useParams()
-
-    if (idCategoria == undefined)
-        console.log("hola")
-
     const [productos, setProductos] = useState([])
+    const [cargando, setCargando] = useState(true)
+
 
     useEffect(() => {
+        setCargando(true)
         getProducto(2000).then(response => {
-            setProductos(response.filter(a => a.id == 1))
+            if (idCategoria == undefined)
+                setProductos(response)
+            else {
+                setProductos(response.filter(prod => prod.idCategoria == idCategoria))
+            }
+        }).finally(() => {
+            setCargando(false)
         })
-    }, [])
+    }, [idCategoria])
+
+    if (cargando) {
+        return (
+            <Spinner style={{ position: "absolute", margin: "auto", left: "0", top: "0", bottom: "0", right: "0", width: "51px", height: "51px" }} animation="border" role="status"></Spinner>
+        )
+    }
 
     return (
         <section>
