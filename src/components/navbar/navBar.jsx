@@ -14,8 +14,8 @@ const NavBar = () => {
                     <Link style={{textDecoration: "none"}} to={"/"}><Navbar.Brand>Golden Byte</Navbar.Brand></Link>
                     <Nav className="me-auto">
                         <Link className='nav-link' to="/">Inicio</Link>    
-                        <Link className='nav-link' to="/productos">Productos</Link>   
-                        <Nav.Link href="#pricing">Proximamente</Nav.Link>
+                        <Link className='nav-link' to="/categoria/pro">Procesadores</Link>   
+                        <Link className='nav-link' to="/categoria/ram">Memorias</Link>
                     </Nav>
                 </Container>
             </Navbar>
