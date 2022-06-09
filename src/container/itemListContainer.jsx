@@ -11,7 +11,6 @@ const ItemListContainer = ({ mensaje }) => {
     const [productos, setProductos] = useState([])
     const [cargando, setCargando] = useState(true)
 
-
     useEffect(() => {
         setCargando(true)
         getProducto(2000).then(response => {

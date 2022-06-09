@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Navbar, Nav, Container } from "react-bootstrap"
+import { Navbar, Nav, Container} from "react-bootstrap"
 import CartIcon from './cartWidget'
 import { Link } from 'react-router-dom'
 import './navBar.css'
@@ -21,6 +21,7 @@ const NavBar = () => {
                             <Link className='nav-link' to="/categoria/vga">Placas de Video</Link>
                             <Link className='nav-link' to="/categoria/mot">Motherboards</Link>
                             <Link className='nav-link' to="/categoria/gab">Gabinetes</Link>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

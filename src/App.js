@@ -11,9 +11,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/item/:id/:nombre' element={<ItemDetailContainer />} />
-        <Route path='/categoria/:idCategoria' element={<ItemListContainer mensaje={"Hola"} />} />
-        <Route path='/Ecommerce' element={<ItemListContainer mensaje={"Catalogo de Productos"} />} />
-        <Route path='/' element={<ItemListContainer mensaje={"Catalogo de Productos"} />} />
+        <Route path='/categoria/:idCategoria' element={<ItemListContainer mensaje={"Catálogo"} />} />
+        <Route path='/Ecommerce' element={<ItemListContainer mensaje={"Catálogo de Productos"} />} />
+        <Route path='/' element={<ItemListContainer mensaje={"Catálogo de Productos"} />} />
       </Routes>
     </Router>
 
