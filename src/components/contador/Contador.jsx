@@ -3,9 +3,10 @@ import React from "react"
 import { Button } from "react-bootstrap"
 import { useState } from "react"
 
-const Contador = ({inicio, stock, tipoFlex}) => {
+const Contador = ({inicio, stock, tipoFlex, agregar}) => {
 
     const [contador, setContador] = useState(inicio)
+
     const sumarCantidad = () => {
         if (stock > contador)
         setContador(contador + 1)
@@ -14,13 +15,13 @@ const Contador = ({inicio, stock, tipoFlex}) => {
         }
     }
     const restarCantidad = () => {
-        if ( contador > 0 )
+        if ( contador > 1 )
         setContador( contador - 1 )
     }
 
     return (
         <div className="contenedor" style={{justifyContent: tipoFlex}}>
-            <Button variant="primary">Añadir al Carrito</Button>
+            <Button variant="primary" onClick={() => { agregar(contador) }}>Añadir al Carrito</Button>
             <button className="sumar" onClick={sumarCantidad}> + </button>
             <p className="contador">{contador}</p>
             <button className="restar" onClick={restarCantidad}> - </button>

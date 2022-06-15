@@ -1,22 +1,19 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { Card } from "react-bootstrap"
-import Contador from "../contador/Contador"
 import "./Item.css"
 
 
-const Item = ({ nombre, precio, img, id, stock }) => {
+const Item = ({ nombre, precio, img, id }) => {
     return (
-        <Card style={{ width: '18rem', padding: "8px"}}>
+        <Card style={{ width: '18rem', padding: "8px" }}>
             <Card.Img variant="top" src={img} alt={nombre} />
             <Card.Body>
-                <Link style={{textDecoration: "none", color: "black"}} to={`/item/${id}/${nombre}`}>
-                    <Card.Title>{nombre}</Card.Title>
-                    <Card.Text>
-                        Precio: ${precio}
-                    </Card.Text>
-                </Link>
-                <Contador inicio={0} stock={stock} tipoFlex="space-around"></Contador>
+                <Card.Title>{nombre}</Card.Title>
+                <Card.Text>
+                    Precio: ${precio}
+                </Card.Text>
+                <Link to={`/item/${id}/${nombre}`}> <button className="hbtn hb-fill-right-bg-br">Ver Detalle</button> </Link>
             </Card.Body>
         </Card>
     )
