@@ -2,7 +2,7 @@ import { useState, createContext, useEffect } from "react";
 
 const ContextoCarrito = createContext()
 
-export const CarritoL = ({ children }) => {
+export const Carrito = ({ children }) => {
     const [carrito, setCarrito] = useState([])
     const [cantidad, setCantidad] = useState(0)
 
@@ -18,6 +18,12 @@ export const CarritoL = ({ children }) => {
         if (!estaEnCarrito(producto.id)) {
             setCarrito([...carrito, producto])
         }
+        console.log(carrito)
+    }
+
+    const vaciarCarrito = () => {
+        const carritoVacio = []
+        setCarrito(carritoVacio)
     }
 
     const eliminarProducto = (id) => {
