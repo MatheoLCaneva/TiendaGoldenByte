@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import NavBar from './components/navbar/NavBar';
+import NavBar from './components/navbar/navBar';
 import CarritoContainer from './components/CarritoContainer/CarritoContainer';
-import ItemListContainer from './Container/ItemListContainer';
+import ItemListContainer from './Container/itemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import { Carrito } from './Context/CarritoContext';
 import './App.css';
