@@ -1,23 +1,27 @@
 import './ItemDetailContainer.css'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useEffect, useState } from 'react'
-import { getProducto } from '../../bd'
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../Firebase'
 
 const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState()
-    const { id } = useParams()
     const [cargando, setCargando] = useState(true)
+    const { id } = useParams()
 
     useEffect(() => {
-        setCargando(true)
-        getProducto(1000).then(response => {
-            setProducto(response.find(res => res.id == id))
-        }).finally(() => {
-            setCargando(false)
-        })
+        const docRef = doc(db, 'productos', id)
+
+        getDoc(docRef).then(doc => {
+            const productoImportado = { id: doc.id, ...doc.data() }
+            setProducto(productoImportado)
+        }).catch(error => {
+            console.log(error)
+        }).finally(
+            setCargando(false))
     }, [])
 
     if (cargando) {
@@ -25,8 +29,6 @@ const ItemDetailContainer = () => {
             <Spinner style={{ position: "absolute", margin: "auto", left: "0", top: "0", bottom: "0", right: "0", width: "51px", height: "51px" }} animation="border" role="status"></Spinner>
         )
     }
-
-
     return (
         <section className='infoProducto'>
             <ItemDetail {...producto} />

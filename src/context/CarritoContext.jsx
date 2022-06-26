@@ -5,6 +5,7 @@ const ContextoCarrito = createContext()
 export const Carrito = ({ children }) => {
     const [carrito, setCarrito] = useState([])
     const [cantidad, setCantidad] = useState(0)
+    const [total, setTotal] = useState(0)
 
     useEffect(() => {
         let cantidad = 0
@@ -12,7 +13,16 @@ export const Carrito = ({ children }) => {
             cantidad += prod.cant
         })
         setCantidad(cantidad)
+        actualizarTotal()
     }, [carrito])
+
+    const actualizarTotal = () => {
+        let total = 0
+        carrito.forEach(prod => {
+            total += prod.cant * prod.precio;
+        })
+        setTotal(total)
+    } 
 
     const agregarProducto = (producto) => {
         if (!estaEnCarrito(producto.id)) {
@@ -42,6 +52,8 @@ export const Carrito = ({ children }) => {
             agregarProducto,
             eliminarProducto,
             estaEnCarrito,
+            vaciarCarrito,
+            total
         }}>
             {children}
         </ContextoCarrito.Provider>

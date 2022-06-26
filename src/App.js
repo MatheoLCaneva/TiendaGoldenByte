@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import NavBar from './components/navbar/NavBar';
 import CarritoContainer from './components/CarritoContainer/CarritoContainer';
-import ItemListContainer from './container/ItemListContainer';
+import ItemListContainer from './Container/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
-import { Carrito } from './context/CarritoContext';
+import { Carrito } from './Context/CarritoContext';
 import './App.css';
 
 function App() {

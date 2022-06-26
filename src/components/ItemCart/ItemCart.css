@@ -1,0 +1,16 @@
+.card-cuerpo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p{
+    margin: 0;
+}
+
+.card-titulo{
+    width: 30%;
+    font-size: 1.1rem;
+}
+.card-titulo, .card-texto{
+    display: inline-block;
+}

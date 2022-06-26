@@ -1,5 +1,5 @@
 import "./ItemDetail.css"
-import ContextoCarrito from "../../context/CarritoContext"
+import ContextoCarrito from "../../Context/CarritoContext"
 import Contador from "../contador/Contador"
 import { Link } from "react-router-dom"
 import { Button } from "react-bootstrap"
@@ -17,7 +17,7 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
         setCantidadAgregada(cant)
 
     }
-
+    console.log(stock)
     return (
         <div className="producto">
             <div className="imagen">
@@ -29,7 +29,7 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
                 {
                     cantidadAgregada === 0
                         ? <Contador inicio={1} stock={stock} tipoFlex="space-between" agregar={añadirCarrito} />
-                        : <Link to='/cart'> <Button variant="info">Finalizar Compra</Button> </Link> 
+                        : <Link to='/cart'> <Button variant="info">Finalizar Compra</Button> </Link>
 
                 }
 

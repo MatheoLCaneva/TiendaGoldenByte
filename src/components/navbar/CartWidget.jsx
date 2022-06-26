@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import ContextoCarrito from '../../context/CarritoContext'
+import ContextoCarrito from '../../Context/CarritoContext'
+import { unmountComponentAtNode } from 'react-dom'
 
 
 const CartIcon = () => {
 
     const { cantidad } = useContext(ContextoCarrito)
-
     return (
         <div style={{ marginRight: ".5rem" }}>
             <Icon style={{ cursor: "pointer" }} icon={faShoppingCart} />
