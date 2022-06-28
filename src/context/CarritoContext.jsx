@@ -28,7 +28,6 @@ export const Carrito = ({ children }) => {
         if (!estaEnCarrito(producto.id)) {
             setCarrito([...carrito, producto])
         }
-        console.log(carrito)
     }
 
     const vaciarCarrito = () => {

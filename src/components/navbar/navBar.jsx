@@ -31,7 +31,6 @@ const NavBar = () => {
                             <Link className='nav-link' to="/categoria/vga">Placas de Video</Link>
                             <Link className='nav-link' to="/categoria/mot">Motherboards</Link>
                             <Link className='nav-link' to="/categoria/gab">Gabinetes</Link>
-
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

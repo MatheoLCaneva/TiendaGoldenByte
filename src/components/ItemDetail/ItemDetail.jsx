@@ -1,6 +1,6 @@
 import "./ItemDetail.css"
 import ContextoCarrito from "../../Context/CarritoContext"
-import Contador from "../contador/Contador"
+import Contador from "../Contador/Contador"
 import { Link } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import { useContext, useState } from "react"
@@ -12,12 +12,10 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
 
 
     const añadirCarrito = (cant) => {
-        console.log(`se agregaron ${cant} ${nombre}`)
         agregarProducto({ id, nombre, precio, cant })
         setCantidadAgregada(cant)
 
     }
-    console.log(stock)
     return (
         <div className="producto">
             <div className="imagen">
@@ -28,7 +26,10 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
                 <h3 className="precio">Precio transferencia o efectivo ${precio}</h3>
                 {
                     cantidadAgregada === 0
-                        ? <Contador inicio={1} stock={stock} tipoFlex="space-between" agregar={añadirCarrito} />
+                        ? stock > 0
+                            ? <Contador inicio={1} stock={stock} tipoFlex="space-between" agregar={añadirCarrito} />
+                            : <Button className="botonStock" variant="secondary" size="lg" disabled>Fuera de Stock</Button>
+
                         : <Link className="aparecer" to='/cart'> <Button variant="info">Finalizar Compra</Button> </Link>
 
                 }
