@@ -26,7 +26,7 @@ const ItemListContainer = ({ mensaje }) => {
             console.log(error)
         }).finally(() => {
             setCargando(false)
-        })
+        }) 
     }, [idCategoria])
 
 
