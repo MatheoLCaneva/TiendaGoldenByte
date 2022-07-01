@@ -5,7 +5,7 @@ import CartIcon from './CartWidget'
 import { Link } from 'react-router-dom'
 import './navBar.css'
 import { useContext } from 'react'
-import ContextoCarrito from '../../Context/CarritoContext'
+import ContextoCarrito from '../../context/CarritoContext'
 
 const NavBar = () => {
 

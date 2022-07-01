@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useContext } from "react"
-import ContextoCarrito from "../../Context/CarritoContext"
+import ContextoCarrito from "../../context/CarritoContext"
 import ItemCart from "../ItemCart/ItemCart"
 import { Button, Spinner, Modal, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -16,9 +16,6 @@ const CarritoContainer = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    useEffect(() => {
-    }, [carrito])
 
     const finalizarCompra = () => {
         const correo = document.querySelector(".input-correo").value

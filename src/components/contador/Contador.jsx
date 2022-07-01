@@ -2,7 +2,7 @@ import "./Contador.css"
 import React, {useContext} from "react"
 import { Button } from "react-bootstrap"
 import { useState } from "react"
-import ContextoCarrito from "../../Context/CarritoContext"
+import ContextoCarrito from "../../context/CarritoContext"
 
 const Contador = ({ inicio, stock, tipoFlex, agregar }) => {
 

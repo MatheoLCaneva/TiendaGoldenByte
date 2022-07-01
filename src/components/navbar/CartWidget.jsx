@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import ContextoCarrito from '../../Context/CarritoContext'
+import ContextoCarrito from '../../context/CarritoContext'
 import { unmountComponentAtNode } from 'react-dom'
 
 

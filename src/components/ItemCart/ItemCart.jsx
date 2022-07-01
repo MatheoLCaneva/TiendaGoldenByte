@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import ContextoCarrito from "../../Context/CarritoContext"
+import ContextoCarrito from "../../context/CarritoContext"
 import {Card, Button} from 'react-bootstrap'
 import './ItemCart.css'
 
