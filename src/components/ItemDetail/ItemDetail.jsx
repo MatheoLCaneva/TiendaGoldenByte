@@ -1,6 +1,6 @@
 import "./ItemDetail.css"
 import ContextoCarrito from "../../Context/CarritoContext"
-import Contador from "../Contador/Contador"
+import Contador from "../contador/Contador"
 import { Link } from "react-router-dom"
 import { Button } from "react-bootstrap"
 import { useContext, useState } from "react"
