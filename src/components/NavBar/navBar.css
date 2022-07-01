@@ -1,0 +1,31 @@
+.carrito {
+    opacity: 1;
+    animation: aparecer 1s ease-in-out;
+}
+
+.desactivado {
+    opacity: 0;
+    pointer-events: none;
+    animation: desaparecer 1s ease-in-out;
+}
+
+@keyframes aparecer {
+    0%, 70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes desaparecer {
+
+    0%,
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
