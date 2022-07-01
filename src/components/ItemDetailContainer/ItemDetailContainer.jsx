@@ -1,5 +1,5 @@
 import './ItemDetailContainer.css'
-import ItemDetail from '../itemDetail/ItemDetail'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
