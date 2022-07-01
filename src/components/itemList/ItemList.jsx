@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Item/Item.jsx";
+import Item from "../item/Item.jsx";
 import "./ItemList.css"
 
 const ItemList = ({ productos }) => {
