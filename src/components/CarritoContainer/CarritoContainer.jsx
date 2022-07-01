@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useContext } from "react"
-import ContextoCarrito from "../../context/CarritoContext"
+import ContextoCarrito from "../../Context/CarritoContext"
 import ItemCart from "../ItemCart/ItemCart"
 import { Button, Spinner, Modal, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'

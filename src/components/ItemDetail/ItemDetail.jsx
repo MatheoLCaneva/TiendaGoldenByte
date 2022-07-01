@@ -1,5 +1,5 @@
 import "./ItemDetail.css"
-import ContextoCarrito from "../../context/CarritoContext"
+import ContextoCarrito from "../../Context/CarritoContext"
 import Contador from "../Contador/Contador"
 import { Link } from "react-router-dom"
 import { Button } from "react-bootstrap"

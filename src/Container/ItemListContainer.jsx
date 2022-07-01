@@ -1,6 +1,6 @@
 import './itemListContainer.css'
 import React, { useEffect, useState } from 'react'
-import ItemList from '../components/itemList/ItemList'
+import ItemList from '../components/ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { Spinner } from 'react-bootstrap'
 import { db } from '../Firebase'
