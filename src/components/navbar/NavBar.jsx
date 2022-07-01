@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Navbar, Nav, Container } from "react-bootstrap"
-import CartIcon from '../Navbar/CartWidget'
+import CartIcon from './CartWidget'
 import { Link } from 'react-router-dom'
 import './navBar.css'
 import { useContext } from 'react'
