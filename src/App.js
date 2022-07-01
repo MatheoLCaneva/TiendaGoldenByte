@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import NavBar from './components/Navbar/NavBar';
+import NavBar from './components/ItemList/NavBar.jsx';
 import CarritoContainer from './components/CarritoContainer/CarritoContainer';
 import ItemListContainer from './Container/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
