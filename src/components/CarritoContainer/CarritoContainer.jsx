@@ -6,8 +6,9 @@ import { Button, Spinner, Modal, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './CarritoContainer.css'
 import { useState } from "react"
-import { setDoc, doc } from 'firebase/firestore'
+import { setDoc, doc, addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore'
 import { db } from "../../Firebase"
+import swal from "sweetalert"
 
 const CarritoContainer = () => {
 
@@ -29,12 +30,64 @@ const CarritoContainer = () => {
     }
 
     const cargarDatoBD = (usuario, items, total) => {
-        setDoc(doc(db, "ventas", "id"), {
-            usuario, 
-            items,
-            total
-        });
+        setCargando(true)
+
+        const refColeccion = collection(db, "productos")
+
+        const batch = writeBatch(db)
+        const ids = carrito.map(prod => prod.id)
+        const noStock = []
+
+        getDocs(query(refColeccion, where(documentId(), "in", ids)))
+            .then(response => {
+                response.docs.forEach(doc => {
+                    const datos = doc.data()
+
+                    const producto = carrito.find(prod => prod.id === doc.id)
+                    const cantidadProducto = producto.cant
+
+                    if (datos.stock >= cantidadProducto) {
+                        batch.update(doc.ref, { stock: datos.stock - cantidadProducto })
+                    } else {
+                        noStock.push({ id: doc.id, ...datos })
+                    }
+                })
+            }).then(() => {
+                if (noStock.length === 0) {
+                    const refColeccion = collection(db, "ventas")
+                    return addDoc(refColeccion, {
+                        usuario, items, total
+                    })
+                } else {
+                    return Promise.reject({ type: "out_of_stock", products: noStock })
+                }
+
+            }).then(({ id }) => {
+                batch.commit()
+                vaciarCarrito()
+                swal({
+                    title: "Muchas gracias!",
+                    text: `Su orden fue generada con éxito. Su número de pedido es: ${id}`,
+                    icon: "success",
+                    button: "Aceptar",
+                });
+            }).catch(error => {
+                if (error.type === "out_of_stock") {
+                    swal({
+                        title: "Ha ocurrido un problema",
+                        text: `Uno o más productos no disponen de stock`,
+                        icon: "error",
+                        button: "Aceptar",
+                    });
+                } else {
+                    console.log(error)
+                }
+            }).finally(() => {
+                setCargando(false)
+            })
     }
+
+
 
     const vaciar = () => {
         vaciarCarrito()
