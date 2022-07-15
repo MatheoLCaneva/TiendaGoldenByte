@@ -26,19 +26,21 @@ const ItemListContainer = ({ mensaje }) => {
             console.log(error)
         }).finally(() => {
             setCargando(false)
-        }) 
+        })
     }, [idCategoria])
 
 
     if (cargando) {
         return (
-            <Spinner style={{ position: "absolute", margin: "auto", left: "0", top: "0", bottom: "0", right: "0", width: "51px", height: "51px" }} animation="border" role="status"></Spinner>
+            <div>
+                <Spinner style={{ marginTop: "3%", marginLeft: "50%", height: "51px", width: "51px" }} animation="border" role="status"></Spinner>
+            </div>
         )
     }
     return (
         <section>
             <h1 className="titulo">{mensaje}</h1>
-            <ItemList productos={productos} />
+             <ItemList productos={productos} />
         </section>
     )
 }

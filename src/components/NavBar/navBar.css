@@ -2,6 +2,13 @@
     opacity: 1;
     animation: aparecer 1s ease-in-out;
 }
+.nav-link{
+    border-radius: 40px;
+}
+.nav-link:hover{
+    background-color: #60a7e11f;
+}
+
 
 .desactivado {
     opacity: 0;

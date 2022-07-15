@@ -30,7 +30,7 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
                             ? <Contador inicio={1} stock={stock} tipoFlex="space-between" agregar={añadirCarrito} />
                             : <Button className="botonStock" variant="secondary" size="lg" disabled>Fuera de Stock</Button>
 
-                        : <Link className="aparecer" to='/cart'> <Button variant="info">Finalizar Compra</Button> </Link>
+                        : <Link className="aparecer " to='/cart'> <Button className="btnFinalizar" variant="info">Finalizar Compra</Button> </Link>
 
                 }
 

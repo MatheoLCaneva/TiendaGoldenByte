@@ -1,0 +1,21 @@
+.footer{
+    padding-top: 40px;
+}
+
+.footer-contenido{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 10px;
+}
+
+.descripcion-footer, .productos{
+    width: 20%;
+}
+
+.nav-link{
+    display: inline-block;
+}
+
+li{
+    list-style: none;
+}

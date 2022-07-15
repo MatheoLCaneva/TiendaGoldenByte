@@ -29,7 +29,9 @@ const ItemDetailContainer = () => {
 
     if (cargando) {
         return (
-            <Spinner style={{ position: "absolute", margin: "auto", left: "0", top: "0", bottom: "0", right: "0", width: "51px", height: "51px" }} animation="border" role="status"></Spinner>
+            <div>
+                <Spinner style={{ marginLeft: "50%", marginTop: "3%", width: "51px", height: "51px" }} animation="border" role="status"></Spinner>
+            </div>
         )
     }
 

@@ -7,3 +7,7 @@
 .botones button.btn-success{
     margin-right: 5% ;
 }
+
+.botonFinalizar, .botonVaciar{
+    border-radius: 40px;
+}

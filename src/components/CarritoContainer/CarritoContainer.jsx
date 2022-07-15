@@ -6,7 +6,7 @@ import { Button, Spinner, Modal, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './CarritoContainer.css'
 import { useState } from "react"
-import { setDoc, doc, addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore'
+import {  addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore'
 import { db } from "../../Firebase"
 import swal from "sweetalert"
 
@@ -100,7 +100,7 @@ const CarritoContainer = () => {
 
     if (cargando) {
         return (
-            <Spinner style={{ position: "absolute", margin: "auto", left: "0", top: "0", bottom: "0", right: "0", width: "51px", height: "51px" }} animation="border" role="status"></Spinner>
+            <Spinner style={{ marginTop: "3%", marginLeft: "50%", height: "51px", width: "51px"}} animation="border" role="status"></Spinner>
         )
     }
 
@@ -109,7 +109,7 @@ const CarritoContainer = () => {
             <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Su carrito se encuentra vacio</h1>
                 <h3 style={{ textAlign: 'center', marginBottom: '20px' }}>Podes chequear nuestros productos clickeando el siguiente boton</h3>
-                <Link to='/' style={{ textAlign: 'center' }}><Button> Productos </Button></Link>
+                <Link to='/' style={{ textAlign: 'center' }}><Button className="botonFinalizar"> Productos </Button></Link>
             </div>
         )
 
@@ -165,8 +165,8 @@ const CarritoContainer = () => {
             </ul>
             <p style={{ textAlign: 'center' }}>Total: ${total}</p>
             <div className="botones">
-                <Button variant="success" onClick={handleShow}>Finalizar Compra</Button>
-                <Button variant="warning" onClick={vaciar}>Vaciar Carrito</Button>
+                <Button className="botonFinalizar" variant="success" onClick={handleShow}>Finalizar Compra</Button>
+                <Button className="botonVaciar" variant="danger" onClick={vaciar}>Vaciar Carrito</Button>
             </div>
         </div>
 

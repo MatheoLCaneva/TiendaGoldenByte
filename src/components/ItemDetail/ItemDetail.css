@@ -40,6 +40,10 @@
     animation: aparecer .4s ease-in-out;
 }
 
+.btnFinalizar{
+    border-radius: 40px;
+}
+
 @keyframes aparecer {
     0%, 70%{
         opacity: 0;
@@ -47,4 +51,8 @@
     100%{
         opacity: 1;
     }
+}
+
+.botonAgregar {
+    border-radius: 40px;
 }
