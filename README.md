@@ -1,6 +1,7 @@
 # Golden Byte Ecommerce
 
-Este proyecto presenta un Ecommerce del emprendimiento Golden Byte el cual consiste en venta de componentes para Pc. 
+Este proyecto presenta un Ecommerce del emprendimiento Golden Byte el cual consiste en venta de componentes para Pc.
+Tuvo una duración de 2 meses para desarrollar las principales funcionalidades
 
 ## Funciones Predominantes
 
@@ -18,6 +19,7 @@ Encontrarás:
 - React Hooks
 - React-Router
 - React-Bootstrap
+- Firestore
 
 ## Contacto
 
